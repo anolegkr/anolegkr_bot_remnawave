@@ -5,15 +5,16 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from app.core.config import settings
 from app.core.database import init_db
-from app.bot.handlers import start, donate
+from app.core.logger import setup_logger
+from app.bot.handlers import start_router, menu_router, subscribe_router, donate_router, admin_router
 
-logging.basicConfig(level=settings.LOG_LEVEL)
-logger = logging.getLogger(__name__)
+logger = setup_logger()
 
 
 async def main():
     # Инициализация БД
     await init_db()
+    logger.info("✅ База данных инициализирована")
     
     # Создание бота
     bot = Bot(
@@ -23,20 +24,25 @@ async def main():
     
     dp = Dispatcher()
     
-    # Регистрация роутеров
-    dp.include_router(start.router)
-    dp.include_router(donate.router)
+    # Регистрация всех роутеров
+    dp.include_router(start_router)
+    dp.include_router(menu_router)
+    dp.include_router(subscribe_router)
+    dp.include_router(donate_router)
+    dp.include_router(admin_router)
+    
+    logger.info("✅ Роутеры зарегистрированы")
     
     # Установка webhook (если нужен)
     if settings.WEBHOOK_URL:
         await bot.set_webhook(settings.WEBHOOK_URL)
-        logger.info(f"Webhook установлен: {settings.WEBHOOK_URL}")
+        logger.info(f"🔗 Webhook установлен: {settings.WEBHOOK_URL}")
     else:
         await bot.delete_webhook()
-        logger.info("Webhook удалён, используем polling")
+        logger.info("🔗 Webhook удалён, используем polling")
     
     # Запуск
-    logger.info("Бот запущен!")
+    logger.info("🚀 Бот запущен!")
     await dp.start_polling(bot)
 
 
