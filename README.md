@@ -269,8 +269,8 @@ Push в ветку (git push origin feat/amazing-feature)
 Этот проект развивается благодаря сообществу. Если бот оказался вам полезным — вы можете отблагодарить разработчика:  
 | Метод оплата | Адрес оплаты |
 |------------|----------|
-| USDT | UQCH23YxmTL24zWrKlPxLj27vjTN2iGqBBVNtlB2p3gMVUkX |
-| TON | UQCH23YxmTL24zWrKlPxLj27vjTN2iGqBBVNtlB2p3gMVUkX |
+| USDT TON | UQCH23YxmTL24zWrKlPxLj27vjTN2iGqBBVNtlB2p3gMVUkX |
+| USDT SOL | 8cBYzax34BiSRAMTJM3yKdmsdK8kyeDVzycNVnggCFWR |
 
 ## Благодарности
 ## 🙏 Благодарности
