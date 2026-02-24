@@ -267,9 +267,10 @@ Push в ветку (git push origin feat/amazing-feature)
 
 💖 Поддержать проект  
 Этот проект развивается благодаря сообществу. Если бот оказался вам полезным — вы можете отблагодарить разработчика:  
-[💰 Поддержать через CryptoBot](https://t.me/CryptoBot?start=pay_anolegkr)  
-[💳 Отправить через Platega](https://platega.com/donate/anolegkr)  
-[⭐ Stars в Telegram](https://t.me/anolegkr_bot_remnawave?start=donate)    
+| Метод оплата | Адрес оплаты |
+|------------|----------|
+| USDT | UQCH23YxmTL24zWrKlPxLj27vjTN2iGqBBVNtlB2p3gMVUkX |
+| TON | UQCH23YxmTL24zWrKlPxLj27vjTN2iGqBBVNtlB2p3gMVUkX |
 
 ## Благодарности
 ## 🙏 Благодарности
