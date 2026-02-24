@@ -4,6 +4,7 @@ version = "1.0.0"
 description = "Telegram VPN Bot for Remnawave Panel"
 authors = ["Oleg <@anolegkr>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.13"
@@ -36,3 +37,7 @@ target-version = ["py313"]
 [tool.ruff]
 line-length = 100
 select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
