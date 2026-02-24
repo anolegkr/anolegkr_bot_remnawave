@@ -76,21 +76,51 @@ graph LR
 ```
 ## 📁 Структура проекта
 ```text
-my-vpn-bot/  
-├── 📁 app/  
-│   ├── 📁 core/          # Config, logger, database, security  
-│   ├── 📁 bot/           # aiogram handlers, keyboards, filters  
-│   ├── 📁 api/           # FastAPI routers (webhooks, admin)  
-│   ├── 📁 services/      # Business logic: payments, remnawave, notifications  
-│   ├── 📁 models/        # SQLAlchemy models + migrations  
-│   └── 📁 utils/         # Helpers, validators, i18n  
-├── 📁 locales/           # i18n: ru/LC_MESSAGES, en/LC_MESSAGES  
-├── 📁 docs/              # Architecture diagrams, API specs  
-├── 📁 tests/             # pytest + aiohttp test suite  
-├── 📄 docker-compose.yml # Production-ready orchestration  
-├── 📄 .env.example       # Configuration template  
-├── 📄 pyproject.toml     # Poetry dependencies + linting config  
-└── 📄 CREDITS.md         # Third-party attributions 
+anolegkr_bot_remnawave/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   └── logger.py
+│   ├── bot/
+│   │   ├── __init__.py
+│   │   ├── handlers/
+│   │   │   ├── __init__.py
+│   │   │   ├── start.py
+│   │   │   ├── menu.py
+│   │   │   ├── subscribe.py
+│   │   │   ├── donate.py
+│   │   │   └── admin.py
+│   │   └── keyboards/
+│   │       ├── __init__.py
+│   │       ├── main_menu.py
+│   │       └── donate.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── remnawave.py
+│   │   ├── payments.py
+│   │   └── notifications.py
+│   └── models/
+│       ├── __init__.py
+│       └── user.py
+├── migrations/
+│   ├── versions/
+│   └── env.py
+├── locales/
+│   ├── ru/LC_MESSAGES/messages.po
+│   └── en/LC_MESSAGES/messages.po
+├── tests/
+│   └── test_bot.py
+├── docker-compose.yml
+├── Dockerfile
+├── .env.example
+├── pyproject.toml
+├── alembic.ini
+├── README.md
+└── requirements.txt
 ```
 
 
