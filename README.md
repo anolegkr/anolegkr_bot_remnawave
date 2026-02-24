@@ -1,6 +1,7 @@
 # 🤖 MyVPN Bot
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Credits](https://img.shields.io/badge/Credits-%20CREDITS-blue)](CREDITS.md)
 [![Python 3.13+](https://img.shields.io/badge/Python-3.13+-3776AB.svg?logo=python)](https://python.org)
 [![Docker](https://img.shields.io/badge/Docker-✅-2496ED.svg?logo=docker)](https://docker.com)
 [![Remnawave API](https://img.shields.io/badge/Remnawave-API-green.svg)](https://docs.rw)
