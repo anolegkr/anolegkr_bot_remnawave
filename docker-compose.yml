@@ -3,6 +3,7 @@ version: "3.9"
 services:
   bot:
     build: .
+    container_name: anolegkr_bot
     restart: unless-stopped
     env_file: .env
     depends_on:
@@ -10,9 +11,12 @@ services:
       - redis
     networks:
       - vpnbot
+    volumes:
+      - ./logs:/app/logs
 
   postgres:
     image: postgres:16-alpine
+    container_name: anolegkr_postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: vpnbot
@@ -22,14 +26,26 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - vpnbot
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d vpnbot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
     image: redis:7-alpine
+    container_name: anolegkr_redis
     restart: unless-stopped
+    command: redis-server --appendonly yes
     volumes:
       - redis_data:/data
     networks:
       - vpnbot
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
